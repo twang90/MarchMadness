@@ -8,7 +8,7 @@ from clock import Clock
 
 class Game:
     def __init__(self, home, away, play_by_play = False):
-        self._scoreboard = ScoreBoard(home.getTeamName(), away.getTeamName())
+        self._scoreboard = ScoreBoard(home, away)
         self._hometeam = home
         self._awayteam = away
         self._initposs = random.choice([self._hometeam, self._awayteam])
@@ -66,7 +66,6 @@ class Game:
             self._period(poss, regular = False)
             num_ot += 1
             print "OT #%d begins" % (num_ot)
-        print "Score:", self._scoreboard.getScore()
         print "Game ends"
         print "The winner is", self._scoreboard.getWinner()
 
