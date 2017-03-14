@@ -69,4 +69,8 @@ class Game:
         print "Score:", self._scoreboard.getScore()
         print "Game ends"
         print "The winner is", self._scoreboard.getWinner()
+        if self._scoreboard.getWinner() == self._hometeam.getTeamName():
+            return self._hometeam
+        else:
+            return self._awayteam
 

@@ -2,7 +2,8 @@
 
 import random
 class Team:
-	def __init__(self, teamName, defRank, offRank, rebounds, fGPct, tPointPct, printComments=True):
+	def __init__(self, seed, teamName, defRank, offRank, rebounds, fGPct, tPointPct, printComments=True):
+		self._seed = seed
 		self._teamName = teamName
 		self._defRank = defRank
 		self._offRank = offRank
@@ -10,6 +11,9 @@ class Team:
 		self._fGPct = fGPct
 		self._tPointPct = tPointPct
 		self._printComments = printComments
+
+	def getSeed(self):
+		return self._seed
 
 	def getDefRank(self):
 		return self._defRank
